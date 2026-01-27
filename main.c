@@ -12,7 +12,15 @@
 
 #include <stdio.h>
 
+typedef struct s_stack
+{
+	size_t maxsize;
+} t_stack;
+
 int main()
 {
+	t_stack stack;
 
+	stack.maxsize = 10;
+	printf("%zu\n", stack.maxsize);
 }
