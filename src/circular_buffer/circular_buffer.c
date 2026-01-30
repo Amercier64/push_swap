@@ -1,6 +1,6 @@
 #include "circular_buffer.h"
 
-int		cb_init(t_circular_buffer	*cb, size_t capacity)
+int		cb_init(t_circular_buffer	*cb, size_t	capacity)
 {
 	if (!cb || !capacity)
 		return (1);
@@ -15,12 +15,21 @@ int		cb_init(t_circular_buffer	*cb, size_t capacity)
 	return (0);
 }
 
-bool	cb_is_empty(t_circular_buffer cb)
+bool	cb_is_empty(t_circular_buffer	cb)
 {
 	return (cb.count == 0);
 }
 
-bool	cb_is_full(t_circular_buffer cb)
+bool	cb_is_full(t_circular_buffer	cb)
 {
 	return (cb.count == cb.capacity);
+}
+
+void	cb_destroy(t_circular_buffer	*cb)
+{
+	if (!cb || !cb->val)
+		return ;
+	free(cb->val);
+	cb->val = NULL;
+	cb->capacity = 0;
 }

@@ -1,6 +1,6 @@
 #include "circular_buffer.h"
 
-int		cb_pop_back(t_circular_buffer *cb, int *elem)
+int		cb_pop_back(t_circular_buffer	*cb, int	*elem)
 {
 	if (!cb || cb_is_empty(*cb))
 		return (1);
@@ -10,7 +10,7 @@ int		cb_pop_back(t_circular_buffer *cb, int *elem)
 	return (0);
 }
 
-int		cb_pop_front(t_circular_buffer *cb, int *elem)
+int		cb_pop_front(t_circular_buffer	*cb, int	*elem)
 {
 	if (!cb || cb_is_empty(*cb))
 		return (1);

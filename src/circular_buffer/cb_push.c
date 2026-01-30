@@ -1,6 +1,6 @@
 #include "circular_buffer.h"
 
-int		cb_push_front(t_circular_buffer *cb, int	elem)
+int		cb_push_front(t_circular_buffer	*cb, int	elem)
 {
 	if (!cb || cb_is_full(*cb))
 		return (1);
@@ -10,7 +10,7 @@ int		cb_push_front(t_circular_buffer *cb, int	elem)
 	return (0);
 }
 
-int		cb_push_back(t_circular_buffer *cb, int	elem)
+int		cb_push_back(t_circular_buffer	*cb, int	elem)
 {
 	if (!cb || cb_is_full(*cb))
 		return (1);
