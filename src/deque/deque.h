@@ -1,20 +1,17 @@
-#ifndef CIRCULAR_BUFFER_H
-# define CIRCULAR_BUFFER_H
+#ifndef DEQUE_H
+# define DEQUE_H
 
 //includes
-# include <stdlib.h>
-# include <stdbool.h>
-# include "libft.h"
+/* #include <stdlib.h> */
+/* #include <stdbool.h> */
+/* #include "libft.h" */
+# include "circular_buffer.h"
 
 //structs
-typedef struct s_circular_buffer
+typedef struct s_deque
 {
-	size_t	capacity;
-	size_t	head;
-	size_t	tail;
-	size_t	count;
-	int		*val;
-} t_circular_buffer;
+	t_circular_buffer cb;
+} t_deque;
 
 //declarations
 int		cb_init(t_circular_buffer	*cb, size_t	capacity);
