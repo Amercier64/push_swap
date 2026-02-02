@@ -3,24 +3,28 @@
 
 //includes
 /* #include <stdlib.h> */
-/* #include <stdbool.h> */
+# include <stdbool.h>
 /* #include "libft.h" */
 # include "circular_buffer.h"
+# include <assert.h> // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 
 //structs
 typedef struct s_deque
 {
-	t_circular_buffer cb;
+	t_circular_buffer	cb;
+	size_t				head;
+	size_t				tail;
+	size_t				count;
 } t_deque;
 
 //declarations
-int		cb_init(t_circular_buffer	*cb, size_t	capacity);
-bool	cb_is_empty(t_circular_buffer	cb);
-bool	cb_is_full(t_circular_buffer	cb);
-int		cb_push_front(t_circular_buffer	*cb, int	elem);
-int		cb_push_back(t_circular_buffer	*cb, int	elem);
-int		cb_pop_front(t_circular_buffer	*cb, int	*elem);
-int		cb_pop_back(t_circular_buffer	*cb, int	*elem);
-void	cb_destroy(t_circular_buffer	*cb);
+int		dq_init(t_deque	*dq, size_t	capacity);
+bool	dq_is_empty(t_deque	*dq);
+bool	dq_is_full(t_deque	*dq);
+int		dq_push_front(t_deque	*dq, int	elem);
+int		dq_push_back(t_deque	*dq, int	elem);
+int		dq_pop_front(t_deque	*dq, int	*elem);
+int		dq_pop_back(t_deque	*dq, int	*elem);
+void	dq_clear(t_deque	*dq);
 
 #endif

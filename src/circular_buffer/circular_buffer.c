@@ -7,22 +7,15 @@ int		cb_init(t_circular_buffer	*cb, size_t	capacity)
 	cb->val = malloc(capacity * sizeof(int));
 	if (!cb->val)
 		return (1);
-	cb->capacity = capacity;
-	cb->head = 0;
-	cb->tail = 0;
-	cb->count = 0;
 	ft_memset(cb->val, 0, sizeof(int) * capacity);
+	cb->capacity = capacity;
 	return (0);
 }
 
-bool	cb_is_empty(t_circular_buffer	cb)
+size_t	cb_get_capacity(const t_circular_buffer	*cb)
 {
-	return (cb.count == 0);
-}
-
-bool	cb_is_full(t_circular_buffer	cb)
-{
-	return (cb.count == cb.capacity);
+	assert(cb); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
+	return (cb->capacity);
 }
 
 void	cb_destroy(t_circular_buffer	*cb)
