@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:31:35 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/02 18:59:55 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:56:56 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	print_arr(int	*arr, size_t size);
 void	print_cb(t_circular_buffer *cb);
 
-int main()
+int main() // REMOVE THIS FILE FROM GIT REPO BEFORE CORRECTION
 {
 	t_circular_buffer	cb;
 	size_t				index;
