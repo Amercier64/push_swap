@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cb_get_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/26 22:10:49 by amercier          #+#    #+#             */
-/*   Updated: 2025/12/27 17:35:40 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/02 15:28:16 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/02 15:28:22 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "circular_buffer.h"
 
-typedef struct s_stack
+size_t		cb_get_next_index(const t_circular_buffer	*cb, size_t index)
 {
-	size_t maxsize;
-} t_stack;
+	assert(cb); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
+	return ((index + 1) % cb->capacity);
+}
 
-int main()
+size_t		cb_get_prev_index(const t_circular_buffer	*cb, size_t index)
 {
-	t_stack stack;
-
-	stack.maxsize = 10;
-	printf("%zu\n", stack.maxsize);
+	assert(cb); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
+	return ((index - 1 + cb->capacity) % cb->capacity);
 }
