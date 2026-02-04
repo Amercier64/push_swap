@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:26:44 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 18:36:12 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:13:25 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_dyn_str
 {
 	size_t	size;
 	char	*val;
-}
+}	t_dyn_str;
 
 //declarations
 int	str_append(t_dyn_str *dest, const char *src);

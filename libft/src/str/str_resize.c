@@ -6,12 +6,12 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:10:17 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 18:49:10 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:12:00 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
-#include <assert.h>
+#include <assert.h> //REMOVE ME TOO
 
 int	str_resize(char *str, size_t *size)
 {

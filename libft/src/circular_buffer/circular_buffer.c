@@ -6,13 +6,13 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:28:12 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/02 15:45:37 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:09:35 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "circular_buffer.h"
 
-int		cb_init(t_circular_buffer	*cb, size_t	capacity)
+int	cb_init(t_circular_buffer *cb, size_t capacity)
 {
 	if (!cb || !capacity)
 		return (1);
@@ -23,13 +23,13 @@ int		cb_init(t_circular_buffer	*cb, size_t	capacity)
 	return (0);
 }
 
-size_t	cb_get_capacity(const t_circular_buffer	*cb)
+size_t	cb_get_capacity(const t_circular_buffer *cb)
 {
 	assert(cb); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 	return (cb->capacity);
 }
 
-void	cb_destroy(t_circular_buffer	*cb)
+void	cb_destroy(t_circular_buffer *cb)
 {
 	if (!cb || !cb->val)
 		return ;

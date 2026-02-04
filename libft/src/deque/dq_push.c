@@ -6,13 +6,13 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:05:11 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/03 15:05:31 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:00:19 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "deque.h"
 
-int		dq_push_front(t_deque	*dq, int	elem)
+int	dq_push_front(t_deque *dq, int elem)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 	if (dq_is_full(dq))
@@ -23,7 +23,7 @@ int		dq_push_front(t_deque	*dq, int	elem)
 	return (0);
 }
 
-int		dq_push_back(t_deque	*dq, int	elem)
+int	dq_push_back(t_deque *dq, int elem)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 	if (dq_is_full(dq))

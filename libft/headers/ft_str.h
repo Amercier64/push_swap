@@ -6,10 +6,9 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 18:26:23 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 18:45:46 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:05:57 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FT_STR_H
 # define FT_STR_H
