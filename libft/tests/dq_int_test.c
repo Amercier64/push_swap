@@ -10,15 +10,15 @@ int main() // REMOVE THIS FILE FROM GIT REPO BEFORE CORRECTION
 
 	size = 6;
 	elem = 42;
-	assert(dq_init(&dq, size) == 0);
+	assert(dq_init(&dq, size, sizeof(int)) == 0);
 	printf("dq_init: OK\n");
 	assert(dq_is_empty(&dq));
 	printf("dq_is_empty: OK\n");
 	while(!dq_is_full(&dq))
 	{
-		dq_push_front(&dq, elem);
+		dq_push_front(&dq, &elem);
 		elem *= -1;
-		dq_push_back(&dq, elem);
+		dq_push_back(&dq, &elem);
 		elem *= -1;
 		elem += 100;
 	}
@@ -31,7 +31,7 @@ int main() // REMOVE THIS FILE FROM GIT REPO BEFORE CORRECTION
 	elem = 10;
 	while(!dq_is_full(&dq))
 	{
-		dq_push_front(&dq, elem);
+		dq_push_front(&dq, &elem);
 		elem++;
 	}
 	while(!dq_is_empty(&dq))

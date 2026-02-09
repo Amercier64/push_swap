@@ -6,20 +6,20 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:05:13 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 19:10:35 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/09 15:47:43 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "deque.h"
 
-int	dq_init(t_deque *dq, size_t capacity)
+int	dq_init(t_deque *dq, size_t capacity, size_t elem_size)
 {
 	int	err;
 
 	dq->head = 0;
 	dq->tail = 0;
 	dq->count = 0;
-	err = cb_init(&dq->cb, capacity);
+	err = cb_init(&dq->cb, capacity, elem_size);
 	return (err);
 }
 

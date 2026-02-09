@@ -6,15 +6,16 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:05:11 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 19:00:19 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/09 15:51:05 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "deque.h"
 
-int	dq_push_front(t_deque *dq, int elem)
+int	dq_push_front(t_deque *dq, void *elem)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
+	assert(elem); // REMOVE ME
 	if (dq_is_full(dq))
 		return (1);
 	cb_set(&dq->cb, dq->head, elem);
@@ -23,9 +24,10 @@ int	dq_push_front(t_deque *dq, int elem)
 	return (0);
 }
 
-int	dq_push_back(t_deque *dq, int elem)
+int	dq_push_back(t_deque *dq, void *elem)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
+	assert(elem); // REMOVE ME
 	if (dq_is_full(dq))
 		return (1);
 	dq->tail = cb_get_prev_index(&dq->cb, dq->tail);
