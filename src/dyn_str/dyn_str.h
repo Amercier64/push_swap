@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:26:44 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/04 21:06:49 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/09 19:51:07 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ typedef struct s_dyn_str
 }	t_dyn_str;
 
 //declarations
-int	str_append(t_dyn_str *dest, const char *src);
-int	str_reserve(t_dyn_str *str, size_t wanted);
-int	str_init(t_dyn_str *str, size_t size);
+int		str_append(t_dyn_str *dest, const char *src);
+int		str_reserve(t_dyn_str *str, size_t wanted);
+int		str_init(t_dyn_str *str, size_t size);
+void	str_destroy(t_dyn_str *str);
 
 #endif
