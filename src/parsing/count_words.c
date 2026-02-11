@@ -6,11 +6,12 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:11:50 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/10 15:35:11 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:53:23 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <sys/types.h>
 
 size_t	count_words(char *str, char sep)
 {

@@ -1,37 +1,68 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_state.c                                       :+:      :+:    :+:   */
+/*   test_get_int_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 12:29:13 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/11 20:14:45 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/11 19:11:30 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/11 20:04:42 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "init_state.h"
+#include "test.h"
+#include "dyn_str.h"
 
+static int	get_int_list(int *int_arr, const t_dyn_str *arg_list, size_t elem_count);
+static int	get_arg_list(t_dyn_str *new_arg_list, size_t *elem_count,
+		int argc, char **argv);
 static void	set_space_to_null(t_dyn_str *arg_list);
-static int	get_arg_list(t_dyn_str *new_arg_list, int argc, char **argv);
+size_t		count_words(char *str, char sep);
 
-/* Parse given args for integer list. Detects duplicate.
- * Initialise stack_a with first int of the list at the top.
- * Assign to rank their rank in ascending order.
- * Initialise stack_b to empty stack.*/
-int	init_state(t_deque *stack_a, t_deque *stack_b, int argc, char argv**)
+int main(int argc, char **argv)
 {
-	int		err;
+	int			*arr;
+	size_t		size;
 	t_dyn_str	arg_list;
-	size_t		elem_count;
 
-	err = get_arg_list(&arg_list, &elem_count, argc, argv);
-	if (!err && elem_count >= 2)
-		err = stack_init(stack_a, arg_list, elem_count);
-	if (!err)
-		err = dq_init(stack_b, elem_count, sizeof(t_stack_elem));
-	str_destroy(arg_list);
-	return (err);
+	assert(get_arg_list(&arg_list, &size, argc, argv) == 0);
+	printf("arg_list: OK\n");
+	assert(size > 0);
+	printf("size: OK\n");
+	assert((arr = malloc(size * sizeof(int))));
+	printf("malloc arr: OK\n");
+	assert(get_int_list(arr, &arg_list, size) == 0);
+	print_int_arr(arr, size);
+}
+
+static int	get_int_list(int *int_arr, const t_dyn_str *arg_list,
+		size_t elem_count)
+{
+	size_t	i;
+	bool	new_word;
+	int		elem;
+	int		err;
+
+	if (!int_arr)
+		return (1);
+	i = 0;
+	new_word = true;
+	while (i < arg_list->len)
+	{
+		if (!arg_list->val[i])
+			new_word = true;
+		else if (new_word)
+		{
+			err = safe_atoi(arg_list->val + i, &elem);
+			if (err)
+				return (1);
+			int_arr[elem_count - 1] = elem;
+			elem_count--;
+			new_word = false;
+		}
+		i++;	
+	}
+	return (elem_count);
 }
 
 static void	set_space_to_null(t_dyn_str *arg_list)
@@ -57,8 +88,8 @@ static int	get_arg_list(t_dyn_str *new_arg_list, size_t *elem_count,
 
 	assert(new_arg_list && argv); // REMOVE ME
 	err = str_init(new_arg_list, 64);
-	if (err || argc < 2)
-		return (1);
+	if (err)
+		return (err);
 	i = 1;
 	while (i < argc)
 	{
