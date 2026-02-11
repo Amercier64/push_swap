@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 15:27:39 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/06 18:44:23 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/10 10:04:48 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 static inline int	digit(char c);
 static int			check_sign(char c, int *sign);
 
+/* safe_atoi is atoi with error detection.
+ * It detects any non digit char and overflow. Result is equivalent to atoi
+ * except in case of overflow detection (result is undefined then).
+ * Returns 0 if SUCCESS, 1 if INVAL, 2 if OVERFLOW */
 int					safe_atoi(const char *str, int *res)
 {
 	int	i;
