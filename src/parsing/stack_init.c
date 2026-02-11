@@ -6,12 +6,14 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:26:55 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/11 16:20:26 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/11 18:15:58 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		get_int_list(int **int_arr, t_dyn_str *arg_list, size_t elem_count);
-void	fill_stack(t_deque *stack, int *int_arr, int *int_arr_sorted);
+#include "init_state.h"
+
+static int		get_int_list(int **int_arr, t_dyn_str *arg_list, size_t elem_count);
+static void	fill_stack(t_deque *stack, int *int_arr, int *int_arr_sorted);
 
 int	stack_init(t_deque *stack, t_dyn_str *arg_list, size_t elem_count)
 {
@@ -40,10 +42,10 @@ int	stack_init(t_deque *stack, t_dyn_str *arg_list, size_t elem_count)
 	return (err);
 }
 
-int		get_int_list(int **int_arr, t_dyn_str *arg_list, size_t elem_count)
+static int		get_int_list(int **int_arr, t_dyn_str *arg_list, size_t elem_count)
 {
 }
 
-void	fill_stack(t_deque *stack, int *int_arr, int *int_arr_sorted)
+static void	fill_stack(t_deque *stack, int *int_arr, int *int_arr_sorted)
 {	
 }

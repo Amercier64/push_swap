@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   init_state.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:29:13 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/11 15:37:40 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/11 18:13:20 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "init_state.h"
 
 static void	set_space_to_null(t_dyn_str *arg_list);
-static t_error	get_arg_list(t_dyn_str *new_arg_list, int argc, char **argv);
+static int	get_arg_list(t_dyn_str *new_arg_list, int argc, char **argv);
 
 /* Parse given args for integer list. Detects duplicate.
  * Initialise stack_a with first int of the list at the top.
@@ -21,7 +21,7 @@ static t_error	get_arg_list(t_dyn_str *new_arg_list, int argc, char **argv);
  * Initialise stack_b to empty stack.*/
 int	init_state(t_deque *stack_a, t_deque *stack_b, int argc, char argv**)
 {
-	t_error		err;
+	int		err;
 	t_dyn_str	arg_list;
 	size_t		elem_count;
 

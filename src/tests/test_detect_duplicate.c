@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   detect_duplicate.c                                 :+:      :+:    :+:   */
+/*   test_detect_duplicate.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 16:14:57 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/11 18:40:06 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/11 18:31:33 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/11 18:39:24 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <assert.h> // REMOVE ME
-#include <sys/types.h>
+#include "test.h"
 
-int	detect_duplicate(const int *arr, size_t size)
+int	detect_duplicate(const int *arr, size_t size);
+
+int main(int argc, char **argv)
 {
-	size_t	i;
-	size_t	j;
-	int		dup;
+	int		*arr;
+	size_t	size;
 
-	assert(arr); // REMOVE ME
-	i = 0;
-	while (i < size)
-	{
-		dup = arr[i];
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[j] == dup)
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	size = argc - 1;
+	if (!size)
+		return 1;
+	assert((arr = malloc(size * sizeof(int))));
+	for (size_t i = 0; i < size; i++)
+		arr[i] = atoi(argv[i + 1]);
+	print_int_arr(arr, size);
+	assert(detect_duplicate(arr, size) == 0);
+	printf("Detect_dup OK\n");
 }
