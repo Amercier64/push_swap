@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   test_push_swap.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 12:11:43 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/13 18:10:27 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/13 18:25:24 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/13 18:29:53 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#ifndef PUSH_SWAP_TEST_H
+# define PUSH_SWAP_TEST_H
 
 //libs
+#include <stdio.h>
 # include "deque.h"
-# include "dyn_str.h"
-
-//structs
-typedef struct	s_stack_elem
-{
-	int		val;
-	size_t	rank;
-}	t_stack_elem;
+# include "stack.h"
 
 //declarations
-int	push(t_deque *dest, t_deque *src, t_dyn_str *action_list, const char *target);
-int	rotate(t_deque *stack, t_dyn_str *action_list, const char *target);
-int	reverse_rotate(t_deque *stack, t_dyn_str *action_list, const char *target);
-int	swap(t_deque *stack, t_dyn_str *action_list, const char *target);
+
+void	print_stack(t_deque *stack);
 
 #endif

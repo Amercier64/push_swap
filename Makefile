@@ -6,6 +6,10 @@ src := push_swap.c \
 	   arr_dup.c count_words.c quicksort.c) \
 	   $(addprefix dyn_str/, \
 	   str_init.c str_reserve.c str_append.c str_destroy.c) \
+	   $(addprefix stack/, \
+	   push.c rotate.c swap.c) \
+	   $(addprefix tests/, \
+	   print_stack.c) \
 
 obj_dir := obj
 

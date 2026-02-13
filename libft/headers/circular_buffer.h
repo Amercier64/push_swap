@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:28:18 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/09 16:44:49 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/13 19:33:27 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ size_t		cb_get_next_index(const t_circular_buffer *cb, size_t index);
 size_t		cb_get_prev_index(const t_circular_buffer *cb, size_t index);
 void		cb_set(t_circular_buffer *cb, size_t index, void *elem);
 void		*cb_at(t_circular_buffer *cb, size_t index);
+void		cb_cpy(t_circular_buffer *dest, const t_circular_buffer *src);
 
 #endif
