@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:28:12 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/09 16:44:28 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/13 15:49:52 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ size_t	cb_get_elem_size(const t_circular_buffer *cb)
 
 void	cb_destroy(t_circular_buffer *cb)
 {
-	if (!cb || !cb->val)
+	if (!cb)
 		return ;
-	free(cb->val);
+	if (cb->val)
+		free(cb->val);
 	cb->val = NULL;
 	cb->capacity = 0;
 }

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 12:48:37 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/10 15:54:34 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/13 15:18:47 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/13 15:38:00 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 //libs
-# include "ft_printf.h"
-
-//structs
-typedef enum	e_error
-{
-	SUCCESS = 0,
-	ERR_ALLOC,
-	ERR_INVAL,
-	ERR_RANGE,
-	ERR_ARGNUM
-}	t_error;
+#include "init_state.h"
+#include "stack.h"
+#include "libft.h"
 
 //declarations
-void	print_error(t_error err);
+
 #endif
