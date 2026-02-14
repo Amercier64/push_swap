@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:29:13 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/12 20:14:40 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/14 02:54:28 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	init_state(t_deque *stack_a, t_deque *stack_b, int argc, char **argv)
 	t_dyn_str	arg_list;
 	size_t		elem_count;
 
+	elem_count = 0;
 	err = get_arg_list(&arg_list, &elem_count, argc, argv);
-	if (elem_count < 2)
+	if (elem_count == 0)
 		err = 1;
 	if (!err)
 		err = stack_init(stack_a, &arg_list, elem_count);

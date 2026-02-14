@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 15:17:56 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/13 21:10:39 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/14 02:33:20 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,30 +30,13 @@ int	main(int argc, char **argv)
 	else
 	{
 		str_init(&action_list, 64);
-		printf("initial state:\n");
 		print_stack(&stack_a);
-		swap(&stack_a, &action_list, "a");
-		printf("after swap\nactions:\n%s", action_list.val);
+		if (is_sorted(&stack_a))
+			printf("SORTED !\n");
+		else
+			printf("NOT SORTED !\n");
+		printf("actions: %s\n", action_list.val);
 		print_stack(&stack_a);
-		swap(&stack_a, &action_list, "a");
-		printf("after swap\nactions:\n%s", action_list.val);
-		print_stack(&stack_a);
-		rotate(&stack_a, &action_list, "a");
-		printf("after rotate\nactions:\n%s", action_list.val);
-		print_stack(&stack_a);
-		reverse_rotate(&stack_a, &action_list, "a");
-		printf("after reverse rotate\nactions:\n%s", action_list.val);
-		print_stack(&stack_a);
-		push(&stack_b, &stack_a, &action_list, "b");
-		printf("after push b\nactions:\n%s", action_list.val);
-		print_stack(&stack_a);
-		printf("stack b:\n");
-		print_stack(&stack_b);
-		push(&stack_a, &stack_b, &action_list, "a");
-		printf("after push a\nactions:\n%s", action_list.val);
-		print_stack(&stack_a);
-		printf("stack b:\n");
-		print_stack(&stack_b);
 		free(action_list.val);
 	}
 	dq_clear(&stack_a);

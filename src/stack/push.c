@@ -6,13 +6,13 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:40:04 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/13 17:56:01 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/14 01:26:16 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-int	push(t_deque *dest, t_deque *src, t_dyn_str *action_list, const char *target)
+int	push(t_deque *dest, t_deque *src, t_dyn_str *action_list, const char *action)
 {
 	int				err;
 	t_stack_elem	elem;
@@ -21,9 +21,8 @@ int	push(t_deque *dest, t_deque *src, t_dyn_str *action_list, const char *target
 	if (!err)
 	{
 		dq_push_front(dest, &elem);
-		str_append(action_list, "p");
-		str_append(action_list, target);
-		str_append(action_list, "\n");
+		if (action_list && action)
+			str_append(action_list, action);
 	}
 	return (err);
 }

@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/13 16:40:06 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/14 01:25:50 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/14 00:29:33 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/14 01:59:48 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
-int	swap(t_deque *stack, t_dyn_str *action_list, const char *action)
+void	sort(t_deque *stack_a, t_deque *stack_b, t_dyn_str *actions)
 {
-	int				err;
-	t_stack_elem	top;
-	t_stack_elem	second;
-
-	err = dq_pop_front(stack, &top);
-	if (!err)
-		err = dq_pop_front(stack, &second);
-	if (!err)
-	{
-		dq_push_front(stack, &top);
-		dq_push_front(stack, &second);
-		if (action_list && action)
-			str_append(action_list, action);
-	}
-	return (err);
+	if (is_sorted(stack_a))
+		return ;
+	else if (stack_a->count == 2)
+		swap(stack_a, actions, "sa\n");
+	else if (stack_a->count == 3)
+		sort_3(stack_a)
 }

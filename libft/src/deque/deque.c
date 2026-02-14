@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:05:13 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/09 15:47:43 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/14 02:45:51 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	dq_init(t_deque *dq, size_t capacity, size_t elem_size)
 	return (err);
 }
 
-bool	dq_is_empty(t_deque *dq)
+bool	dq_is_empty(const t_deque *dq)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 	return (dq->count == 0);
 }
 
-bool	dq_is_full(t_deque *dq)
+bool	dq_is_full(const t_deque *dq)
 {
 	assert(dq); // DON'T FORGET TO REMOVE ME BEFORE LAST PUSH !!!
 	return (dq->count >= cb_get_capacity(&dq->cb));

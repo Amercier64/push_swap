@@ -8,6 +8,8 @@ src := push_swap.c \
 	   str_init.c str_reserve.c str_append.c str_destroy.c) \
 	   $(addprefix stack/, \
 	   push.c rotate.c swap.c) \
+	   $(addprefix sort/, \
+	   is_sorted.c) \
 	   $(addprefix tests/, \
 	   print_stack.c) \
 

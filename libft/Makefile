@@ -6,7 +6,7 @@
 #    By: amercier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/14 14:16:18 by amercier          #+#    #+#              #
-#    Updated: 2026/02/13 19:48:19 by amercier         ###   ########.fr        #
+#    Updated: 2026/02/14 02:36:29 by amercier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ src := \
 	$(addprefix ft_printf/, ft_printf.c ft_print_num.c ft_print_s.c) \
 	$(addprefix circular_buffer/, circular_buffer.c \
 	cb_set.c cb_at.c cb_get_index.c cb_cpy.c) \
-	$(addprefix deque/, deque.c dq_pop.c dq_push.c dq_dup.c) \
+	$(addprefix deque/, deque.c dq_pop.c dq_push.c dq_dup.c dq_peek.c) \
 
 obj_dir := obj
 

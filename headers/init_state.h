@@ -6,7 +6,7 @@
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:45:37 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/12 19:59:39 by amercier         ###   ########.fr       */
+/*   Updated: 2026/02/14 01:32:56 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "dyn_str.h"
 # include "deque.h"
 # include "stack.h"
-# include "error.h"
 
 //declarations
 int		init_state(t_deque *stack_a, t_deque *stack_b, int argc, char **argv);

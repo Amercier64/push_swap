@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amercier <amercier@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/13 16:40:06 by amercier          #+#    #+#             */
-/*   Updated: 2026/02/14 01:25:50 by amercier         ###   ########.fr       */
+/*   Created: 2026/02/14 01:34:24 by amercier          #+#    #+#             */
+/*   Updated: 2026/02/14 02:43:37 by amercier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
-int	swap(t_deque *stack, t_dyn_str *action_list, const char *action)
+bool	is_sorted(t_deque *stack)
 {
-	int				err;
-	t_stack_elem	top;
-	t_stack_elem	second;
 
-	err = dq_pop_front(stack, &top);
-	if (!err)
-		err = dq_pop_front(stack, &second);
-	if (!err)
+	bool			is_sorted;
+	size_t			counter;
+	t_stack_elem	elem; 
+
+	counter = 0;
+	is_sorted = true;
+	while(counter < stack->count)
 	{
-		dq_push_front(stack, &top);
-		dq_push_front(stack, &second);
-		if (action_list && action)
-			str_append(action_list, action);
+		dq_peek_front(stack, &elem);
+		is_sorted = is_sorted && (counter == elem.rank);
+		rotate(stack, NULL, NULL);
+		counter++;
 	}
-	return (err);
+	return (is_sorted);
 }
